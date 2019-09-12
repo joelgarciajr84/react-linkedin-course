@@ -1,12 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import {render} from 'react-dom'
+import Library from './Components/Library'
+import FavoriteColorForm from './Components/FavoriteColorForm'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const bookList = [
+    {title:'a', author:'x', pages:10},
+    {title:'b', author:'y', pages:20},
+    {title:'c', author:'z', pages:30}
+]
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+render(
+    <div>
+   <FavoriteColorForm/ >
+    <Library books={bookList}/>
+    </div>,
+    document.getElementById('root')
+)
